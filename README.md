@@ -7,7 +7,7 @@ learning.md
 
 
 #### 1.技术选型
-> Vue + Vue-router +Express + 
+> Vue + Vue-router + Axios + Less + Node.js + MongoDB + Express
 #### 2.绿色风格
 > 虫师的风格
 #### 2.当前进度概括
