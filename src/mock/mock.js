@@ -11,9 +11,7 @@ const data = () => {
     }
     list.push(obj);
   }
-  return {
-    data: list
-  }
+  return list;
 }
 
 Mock.mock('/test', /post|get/i, data);

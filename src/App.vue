@@ -7,6 +7,7 @@
     <main>
       <router-view/>
     </main>
+    <hr>
     <footer>
       <footer-bar></footer-bar>
     </footer>
@@ -29,7 +30,7 @@ export default {
 <style>
 main {
   width: 100%;
-  height: 500px;
-  background-color: #888;
+  height: 600px;
+  overflow-y: scroll;
 }
 </style>

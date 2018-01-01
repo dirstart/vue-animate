@@ -1,19 +1,27 @@
+#### 进度表
+schedule.md
+#### Get
+learning.md
+
+* * *
+
+
 #### 1.技术选型
 > Vue + Vue-router +Express + 
 #### 2.绿色风格
 > 虫师的风格
-#### 2.当前进度
+#### 2.当前进度概括
 2018-1-1 配环境。
 
 
 
 
 
+* * *
 
 
 
-
-
+#### Using
 
 ## Build Setup
 
