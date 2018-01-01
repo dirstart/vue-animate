@@ -3,7 +3,7 @@
     <div class="title">
       <input type="text" placeholder="请输入账号" v-model="account">
       <input type="text" placeholder="请输入密码" v-model="password">
-      <button type="submit" @click="login">登录</button>
+      <button type="submit" @click="login">注册</button>
     </div>
     <div>
       <span>balabal</span>
@@ -46,22 +46,22 @@
         if (!res) return;
         me.mockData = res.data;
       },
-      login() {
-        console.log("login");
+      login () {
+        // console.log('login');
         const me = this;
-        const res = me.axios.get('/api/login/getAccount');
-        if (!res.success) return;
-        // console.log("服务器未响应");
+        // const res = me.axios.get('/api/login/getAccount');
+        // if (!res.success) return;
+        // console.log('服务器未响应');
         // 1.回调成功1
         const param = {
           account: me.account,
           password: me.password
         };
         // 2.创建一个号码
-        const res2 = me.axios.post('/api/login/createAccount');
-        if (!res.success) return;
-        // console.log("创建账号失败");
-        console.log("创建账号成功");
+        const res2 = me.axios.post('/api/login/createAccount', param);
+        if (!res2.success) return;
+        // console.log('创建账号失败');
+        console.log('创建账号成功');
       }
     },
     mounted () {
