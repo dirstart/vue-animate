@@ -1,22 +1,20 @@
 <template>
   <div id="app">
-    <header>
-      <top-bar></top-bar>     
-    </header>
-    <hr>
-    <main>
+    <div class="app-header">
+      <top-bar></top-bar> 
+    </div>
+    <main class="app-content">
       <router-view/>
     </main>
-    <hr>
-    <footer>
+    <div class="app-footer">
       <footer-bar></footer-bar>
-    </footer>
+    </div>
   </div>
 </template>
 
 <script>
-import topBar from './components/topBar'
-import footerBar from './components/footerBar'
+import topBar from '@/components/topBar'
+import footerBar from '@/components/footerBar'
 
 export default {
   name: 'app',
@@ -27,10 +25,15 @@ export default {
 }
 </script>
 
-<style>
-main {
+<style lang="less" scoped>
+.app-content {
   width: 100%;
   height: 600px;
   overflow-y: scroll;
+}
+.app-footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 </style>
