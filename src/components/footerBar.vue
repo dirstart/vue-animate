@@ -1,5 +1,6 @@
 <template>
   <div class="all-wrap">
+    <div @click="handleClick">test</div>
     <ul>
       <router-link tag="li" v-for="(item,key) in bars" :key="key" :to="item.to">
         <i class="iconfont" :class="`icon-${item.icon}`"></i>
@@ -16,7 +17,15 @@
       return {
         test: '123',
         bars: [{ icon: 'index', text: '首页', to: '/index' },
-        { icon: 'home', text: '家园', to: 'home' }]
+        { icon: 'home', text: '家园', to: '/home' },
+        { icon: 'text', text: 'test', to: '/foo' }]
+      }
+    },
+    methods: {
+      handleClick () {
+        // this.$router.push({ name: 'one' });
+        // this.$router.push({ path: 'test', query: { key: '123' }});
+        this.$router.go(-1);
       }
     }
   }

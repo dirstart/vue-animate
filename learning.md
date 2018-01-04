@@ -23,3 +23,57 @@ static => resouces(远程URL请求) 放的是非组件资源，比如reset
 问题了，当然这**只适用于开发环境**.
 > vue-cli的这个设置来自于其使用的插件http-proxy-middleware
 github：https://github.com/chimurai/http-proxy-middleware
+
+#### 4.同步异步再学习
+> 同步的情况下,是由处理消息者自己去等待消息是否被触发,而异步的情况下是由触发机制来通知处理消息者
+
+#### 5.vue-router的使用
+> 声明式VS编程式 `<router-link :to="..."></router-link>` 和 `router.push(...)`
+作用其实是一样的
+router.push('home') === <router-link to="/home"></router-link>
+router.push({ name: 'user', params: { userId: 123 }})
+===
+<router-link :to="{ name: 'user', params: { userId: 123 } }">User</router-link>
+
+#### 6.router.replace(location, onComplete?, onAbout?)
+> 跟router.push很像，唯一的不同时，它不会向history添加新纪录，而是跟方法名一样，替换掉当前的history目录。
+router.go(n)  在history记录中向前或者向后退多少步，类似 window.history.go(n).
+命名路由作用依旧是相同的
+
+#### 7.路由元信息:meta字段
+> 可以用来跟踪检测路由，打印路由
+```
+router.beforeEach((to, from, next) => {
+  console.log(to);
+  next();
+});
+```
+下方的官网示例难道说可以用来检测用户是否登录？不错！
+正好能够解决最近业务上的问题：关于微信刚开始没有openId如何让用户注册显示页的问题。
+当时的解决方案一：
+  微信一开始进入的时候跳进一个空页里面。
+  1.调用接口获取openId和userId。
+  2.之后根据await返回的 userId 的有无进行判断。
+  3.若是有的话，则跳转至我们的业务页面。
+      若是没有，则跳转至我们的注册页面。
+现在看到这个之后的解决方案二：
+  1.根据每一个路由，因为所有的业务页面都是需要权限的，所以我们在  beforeEach里面判断权限！！！！！！赞！！！！！
+```
+// https://router.vuejs.org/zh-cn/advanced/meta.html
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    // this route requires auth, check if logged in
+    // if not, redirect to login page.
+    if (!auth.loggedIn()) {
+      next({
+        path: '/login',
+        query: { redirect: to.fullPath }
+      })
+    } else {
+      next()
+    }
+  } else {
+    next() // 确保一定要调用 next()
+  }
+})
+```

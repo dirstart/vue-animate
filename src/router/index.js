@@ -9,11 +9,17 @@ import Home from '@/pages/home/home'
 
 Vue.use(Router)
 
-export default new Router({
+const User = {
+  props: ['id'],
+  template: '<div>User {{ $route.params.id }} </div>'
+}
+
+const router =  new Router({
   routes: [
     {
       path: '/',
-      redirect: 'index'
+      redirect: 'index',
+      meta: { title: "原始页面" }
     },
     {
       path: '/index',
@@ -25,12 +31,29 @@ export default new Router({
     },
     {
       path: '/login',
-      name: '/one',
-      component: Login
+      name: 'one',
+      component: Login,
+      meta: {
+        title: '登录'
+      }
     },
     {
       path: 'home',
-      component: Home
-    }
-  ]
+      component: Home,
+      meta: {
+        title: '个人中心'
+      }
+    },
+    {
+      path: '/foo/:id',
+      component: User,
+      props: { default: true }
+    }]
+});
+
+router.beforeEach((to, from, next) => {
+  console.log(to);
+  next();
 })
+
+export default router;
