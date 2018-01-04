@@ -7,12 +7,9 @@ import Login from '@/pages/login/login'
 
 import Home from '@/pages/home/home'
 
-Vue.use(Router)
+import NotFound from '@/pages/notfound/notfound'
 
-const User = {
-  props: ['id'],
-  template: '<div>User {{ $route.params.id }} </div>'
-}
+Vue.use(Router)
 
 const router =  new Router({
   routes: [
@@ -45,15 +42,15 @@ const router =  new Router({
       }
     },
     {
-      path: '/foo/:id',
-      component: User,
-      props: { default: true }
+      path: '*',
+      meta: { name: 404 },
+      component: NotFound
     }]
 });
 
 router.beforeEach((to, from, next) => {
   console.log(to);
   next();
-})
+});
 
 export default router;
