@@ -23,4 +23,7 @@
 - 先做了首页的固定底部的地方，时间太敢，还没有做完。目前决定使用iconfont做，正在考虑是否使用svg。
 ![](https://raw.githubusercontent.com/dirstart/image_bed/master/last7.png)
 
+#### Day4
+- 代码优化，准备使用vue-router的beforeEach来做真正的登录功能。
+
 
