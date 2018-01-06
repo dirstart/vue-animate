@@ -11,12 +11,12 @@ import NotFound from '@/pages/notfound/notfound'
 
 Vue.use(Router)
 
-const router =  new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
       redirect: 'index',
-      meta: { title: "原始页面" }
+      meta: { title: '原始页面' }
     },
     {
       path: '/index',

@@ -25,5 +25,17 @@
 
 #### Day4
 - 代码优化，准备使用vue-router的beforeEach来做真正的登录功能。
+- 添加NotFound的 demo 页面(后期有空则修改)。
+
+#### Day5
+- 处理iconfont的引入，本来是静态static在html里面引入，但是不符合webpack思想，百度了下如何正统地引入它
+> 在html引用是很不干净的，因为这样webpack的压缩就压缩不到这里的`static css`了。
+修改办法：引用之中使用 './' 等相对路径
+信息来源：http://blog.csdn.net/xiaoermingn/article/details/53543001
+- 移动端布局的一些学习、思考和引入，主要为 `rem` 布局。
+- less之间的相互引用
+> @import './base.less'; // 这个是正确的格式，少个`;`均会报错
+@import "~assets/css/ydui-reset"; // 这个是在 webpack 下的写法
+
 
 

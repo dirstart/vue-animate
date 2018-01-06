@@ -23,8 +23,6 @@
     },
     methods: {
       handleClick () {
-        // this.$router.push({ name: 'one' });
-        // this.$router.push({ path: 'test', query: { key: '123' }});
         this.$router.go(-1);
       }
     }
