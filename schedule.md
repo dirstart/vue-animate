@@ -32,10 +32,12 @@
 > 在html引用是很不干净的，因为这样webpack的压缩就压缩不到这里的`static css`了。
 修改办法：引用之中使用 './' 等相对路径
 信息来源：http://blog.csdn.net/xiaoermingn/article/details/53543001
-- 移动端布局的一些学习、思考和引入，主要为 `rem` 布局。
+- 新增`rem`移动端适配.
+> 移动端布局的一些学习、思考和引入，主要为 `rem` 布局。
 - less之间的相互引用
 > @import './base.less'; // 这个是正确的格式，少个`;`均会报错
 @import "~assets/css/ydui-reset"; // 这个是在 webpack 下的写法
+- 全局采用`box-sizing`布局
 
 
 

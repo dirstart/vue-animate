@@ -35,7 +35,7 @@ const router = new Router({
       }
     },
     {
-      path: 'home',
+      path: '/home',
       component: Home,
       meta: {
         title: '个人中心'

@@ -28,7 +28,7 @@ export default {
 <style lang="less" scoped>
 .app-content {
   width: 100%;
-  height: 600px;
+  height: 100%;
   overflow-y: scroll;
 }
 .app-footer {

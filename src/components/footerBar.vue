@@ -32,8 +32,7 @@
 <style lang="less" scoped="">
   .all-wrap {
     width: 100%;
-    padding: 10px 20px;
-    padding-bottom: 0;
+    background-color: #f0f0f0;
   }
   ul {
     display: flex;
@@ -41,20 +40,18 @@
     background-color: #08558a;
 
     > li {
-      margin: 10px 10px 0 10px;
-      padding: 3px 0 3px 0;
+      margin: .4rem .4rem 0 .4rem;
       flex: 1;
+      line-height: 1rem;
       background-color: #7FEB9B;
-      // color: #fff;
       i,
       span {
         display: inline-block;
-        // display: block;
         width: 100%;
         text-align: center;
       }
       span {
-        font-size: 10px;
+        font-size: .5rem;
       }
     }
   }
