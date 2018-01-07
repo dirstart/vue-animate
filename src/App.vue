@@ -3,10 +3,10 @@
     <div class="app-header">
       <top-nav></top-nav> 
     </div>
-    <main class="app-content">
+    <main class="app-content main-content">
       <router-view/>
     </main>
-    <div class="app-footer">
+    <div class="app-footer main-content">
       <footer-bar></footer-bar>
     </div>
     <side-bar></side-bar>

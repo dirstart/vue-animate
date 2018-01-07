@@ -1,6 +1,5 @@
 <template>
   <div class="all-wrap">
-    <div @click="handleBack">test</div>
     <ul>
       <router-link 
         tag="li"

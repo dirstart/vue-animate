@@ -1,7 +1,6 @@
 <template>
   <div>
-    <span>666</span>
-    <router-link to="/login">Login-test</router-link>
+    <span>主页版块</span>
   </div>
 </template>
 

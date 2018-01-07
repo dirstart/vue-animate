@@ -7,6 +7,9 @@ const mutations = {
   showSideBar (state) {
     state.sideBar.open = !state.sideBar.open
     state.sideBar.docked = !state.sideBar.docked
+  },
+  setUserData (state, userData) {
+    state.user = userData
   }
 };
 
