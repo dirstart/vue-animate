@@ -1,8 +1,14 @@
 <template>
   <div class="all-wrap">
-    <div @click="handleClick">test</div>
+    <div @click="handleBack">test</div>
     <ul>
-      <router-link tag="li" v-for="(item,key) in bars" :key="key" :to="item.to">
+      <router-link 
+        tag="li"
+        v-for="(item,key) in bars"
+        :key="key"
+        :to="item.to"
+        @click.native="handleClick(item.text)"
+      >
         <i class="iconfont" :class="`icon-${item.icon}`"></i>
         <span>{{ item.text }}</span>
       </router-link>
@@ -18,12 +24,17 @@
         test: '123',
         bars: [{ icon: 'index', text: '首页', to: '/index' },
         { icon: 'home', text: '家园', to: '/home' },
-        { icon: 'text', text: 'test', to: '/foo' }]
+        { icon: 'news', text: '动态', to: '/news' }]
       }
     },
     methods: {
-      handleClick () {
+      handleBack () {
         this.$router.go(-1);
+      },
+      handleClick (name) {
+        console.log(name);
+        const me = this;
+        me.$store.commit('changeTitle', { title: name });
       }
     }
   }
@@ -49,6 +60,9 @@
         display: inline-block;
         width: 100%;
         text-align: center;
+      }
+      i {
+        font-size: .8rem;
       }
       span {
         font-size: .5rem;

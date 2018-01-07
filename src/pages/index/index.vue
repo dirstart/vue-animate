@@ -1,5 +1,8 @@
 <template>
-  <div>666</div>
+  <div>
+    <span>666</span>
+    <router-link to="/login">Login-test</router-link>
+  </div>
 </template>
 
 <script>
@@ -8,7 +11,7 @@ export default {}
 
 <style lang="less" scoped>
   div {
-    height: 80px;
+    height: 4em;
     background-color: #089e8a;
   }
 </style>

@@ -77,3 +77,5 @@ router.beforeEach((to, from, next) => {
   }
 })
 ```
+#### 8.vue-router里面绑定click
+> `@click.native = functionName` will be OK.

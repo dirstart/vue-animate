@@ -7,6 +7,8 @@ import Login from '@/pages/login/login'
 
 import Home from '@/pages/home/home'
 
+import News from '@/pages/news/news'
+
 import NotFound from '@/pages/notfound/notfound'
 
 Vue.use(Router)
@@ -42,12 +44,22 @@ const router = new Router({
       }
     },
     {
+      path: '/news',
+      component: News,
+      meta: {
+        title: '动态'
+      }
+    },
+    {
       path: '*',
       meta: { name: 404 },
       component: NotFound
     }]
 });
 
+// to 即将要进入的目标
+// from 当前正在离开的路由
+// next 进行管道中的下一个勾子, next('/') 跳转到一个不同的地址
 router.beforeEach((to, from, next) => {
   console.log(to);
   next();
