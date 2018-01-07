@@ -9,18 +9,21 @@
     <div class="app-footer">
       <footer-bar></footer-bar>
     </div>
+    <side-bar></side-bar>
   </div>
 </template>
 
 <script>
 import topNav from '@/components/topNav'
 import footerBar from '@/components/footerBar'
+import sideBar from '@/components/sideBar'
 
 export default {
   name: 'app',
   components: {
     topNav,
-    footerBar
+    footerBar,
+    sideBar
   }
 }
 </script>

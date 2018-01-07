@@ -3,6 +3,10 @@
 const mutations = {
   changeTitle (state, { title }) {
     state.headerTitle = title
+  },
+  showSideBar (state) {
+    state.sideBar.open = !state.sideBar.open
+    state.sideBar.docked = !state.sideBar.docked
   }
 };
 

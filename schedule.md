@@ -39,5 +39,8 @@
 @import "~assets/css/ydui-reset"; // 这个是在 webpack 下的写法
 - 全局采用`box-sizing`布局
 
+#### Day6
+- 由于时间缘故决定采用`Muse-UI`。
+
 
 

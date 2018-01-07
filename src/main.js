@@ -2,13 +2,15 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import axios from 'axios'
+import MuseUI from 'muse-ui'
 
 import App from './App'
 import router from './router'
 import store from './store'
 import './mock/mock'
-
+import 'muse-ui/dist/muse-ui.css'
 import '@/assets/css/style.less'
+Vue.use(MuseUI)
 
 Vue.config.productionTip = false
 Vue.prototype.axios = axios;
