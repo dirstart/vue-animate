@@ -17,6 +17,8 @@ const bodyParser = require('body-parser');
 // 引入express
 const express = require('express');
 const app = express();
+
+const User = require('./db/models/user');
 const port = '8088';
 const dbUrl = 'mongodb://localhost:27017/animate';
 

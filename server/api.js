@@ -1,4 +1,5 @@
 const models = require('./db');
+const User = require('./db/models/user');
 const express = require('express');
 const router = express.Router();
 // console.log(models);
@@ -11,8 +12,9 @@ router.post('/api/login/createAccount', (req, res) => {
     password: req.body.password
   });
   // 保存newAccount数据进 MongoDB
-  console.log("收到数据为", req.body);
-  newAccount.save((err, data) => {
+  console.log("收到数据为", req.body, "开始保存到mongodb");
+  const users = new User(newAccount);
+  users.save((err, data) => {
     if (err) {
       res.send(err);
     } else {
