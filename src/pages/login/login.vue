@@ -1,13 +1,13 @@
 <template>
   <section class="wrap">
     <div>
-      <h1>注册</h1>
+      <button @click="handleRegister">注册</button>
       <div>
         <label for="re_name">用户名:</label>
-        <input type="text" id="re_name" />
+        <input type="text" id="re_name" v-model="account" />
       </div>
       <label for="re_psd">密码:</label>
-      <input type="text" id="re_psd">
+      <input type="text" id="re_psd" v-model="password">
     </div>
     <hr>
     <div>
@@ -23,7 +23,26 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data () {
+    return {
+      account: '',
+      password: ''
+    }
+  },
+  methods: {
+    handleRegister () {
+      const me = this;
+      const param = {
+        account: me.account,
+        password: me.password
+      };
+      const res = me.axios.post('/api/login/createAccount', param);
+      if (!res) return;
+      console.log('result', res);
+    }
+  }
+}
 </script>
 
 <style lang='less' scoped>

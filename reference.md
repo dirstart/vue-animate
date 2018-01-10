@@ -1,3 +1,9 @@
 #### 学习相关文档
 1.Vue+Node+MongoDB从开发到正式部署
 > http://blog.csdn.net/qq_26598303/article/details/53468399
+
+2.https://www.cnblogs.com/coolicer/p/4191548.html
+> 关于cookie-parser
+
+3.关于登录注册和session
+> http://blog.csdn.net/qq_33401924/article/details/52947514

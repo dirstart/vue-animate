@@ -11,10 +11,16 @@ router.post('/api/login/createAccount', (req, res) => {
     password: req.body.password
   });
   // 保存newAccount数据进 MongoDB
+  console.log("收到数据为", req.body);
   newAccount.save((err, data) => {
     if (err) {
       res.send(err);
     } else {
+      // 这里就是服务器返回来的数据，按照常理，格式应该是
+      // {
+      //   data: ['balbala一大堆数据，前端都往这里取的哈哈'],
+      //   success: true or false;
+      // }
       res.send('createAccount Successed');
     }
   });
@@ -30,6 +36,10 @@ router.get('/api/login/getAccount', (req, res) => {
       res.send('data');
     }
   });
+});
+
+router.get('/', (req, res) => {
+  console.log('user in session', req.session.user);
 });
 
 module.exports = router;
