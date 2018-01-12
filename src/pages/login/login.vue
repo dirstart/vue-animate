@@ -11,14 +11,15 @@
     </div>
     <hr>
     <div>
-      <h1>登录</h1>
+      <button @click="handleLogin">登录</button>
       <div>
         <label for="log_name">用户名:</label>
-        <input type="text" id="log_name" />
+        <input type="text" id="log_name" v-model="logName" />
       </div>
       <label for="log_psd">密码:</label>
-      <input type="text" id="log_psd">
+      <input type="text" id="log_psd" v-model="logPsd">
     </div>
+    <button @click="handleLogout">测试退出</button>
   </section>
 </template>
 
@@ -27,7 +28,9 @@ export default {
   data () {
     return {
       account: '',
-      password: ''
+      password: '',
+      logName: '',
+      logPsd: ''
     }
   },
   methods: {
@@ -40,6 +43,21 @@ export default {
       const res = me.axios.post('/api/login/createAccount', param);
       if (!res) return;
       console.log('result', res);
+    },
+    handleLogin () {
+      const me = this;
+      const param = {
+        account: me.logName,
+        password: me.logPsd
+      };
+      const res = me.axios.post('/api/login/signIn', param);
+      if (!res) return;
+      console.log(res);
+    },
+    handleLogout () {
+      const me = this;
+      const res = me.axios.get('/api/logout');
+      console.log(res);
     }
   }
 }

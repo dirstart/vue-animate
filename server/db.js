@@ -1,5 +1,6 @@
 // Schema,Model,Entity或者Documents
 // Schema生成Model,Model创造Entity
+const User = require('./db/models/user');
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/animate');
 
@@ -12,14 +13,9 @@ db.once('open', () => {
   console.log('Mongo connection successed');
 });
 
-// 定义模式Schema
-const loginSchema = new mongoose.Schema({
-  account: String,
-  password: String
-});
-// 定义模型Model
+// 将模型集中定义在这里
 const Models = {
-  Login: mongoose.model('Login', loginSchema)
+  User: User
 };
 
 module.exports = Models;

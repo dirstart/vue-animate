@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-  name: {
+  account: {
+    unipue: true,
+    // 唯一的
     type: String
   },
   password: String

@@ -8,7 +8,7 @@ static => resouces(远程URL请求) 放的是非组件资源，比如reset
 (首先是按照Vue的插件文档来写的，直接绑在原型链上不是不可以，如果像楼主你这样注册一个$http，和项目其他成员协作的时候就必须注明你注册的变量名称，而使用vue-axios大家就没有歧义了。)
 说白了，使用vue-axios更多是为了符合规范，并且方便协作吧。
 
-#### 3.前端开发时通过 Vue-cli 中提供的 proxyTable 进行代理,由此可跨域调用Node编写的API。
+#### 3.前端开发时通过 Vue-cli 中提供的 proxyTable 进行代理,由此可跨域调用Node编写的API。 (此处这个东西还待学习)
 ```
 '/api': {
   target: 'http://localhost:8088/api/',

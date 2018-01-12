@@ -7,6 +7,7 @@ const actions = {
       console.log(userData);
     } catch (e) {
       console.log('没获取到用户信息');
+      // 没获取到用户信息则显示默认的头像
       const userData = {
         name: '点击头像登录',
         avatar: 'https://sfault-avatar.b0.upaiyun.com/147/223/147223148-573297d0913c5_huge256'

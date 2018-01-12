@@ -40,16 +40,10 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
-// // 访问静态资源文件
-// app.use(express.static(path.resolve(__dirname, '../dist')));
-// // 单页应用，所以的请求都走 /dist/index.html
-// app.get('*', (req, res) => {
-//   const html = fs.readFileSync(path.resolve(__dirname, '../dist/index.html'), 'utf-8')
-//   res.send(html);
-// });
+
+
 app.listen(port);
 console.log("success listen " + port + "...");
-// 验证了先后是有差别的
 app.use((req, res, next) => {
   console.log("!!!!!", req.session);
   const _user = req.session.user;
