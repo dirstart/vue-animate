@@ -4,8 +4,6 @@ const router = express.Router();
 
 // 1.用户注册
 router.post('/api/login/createAccount', (req, res) => {
-  // 这里的req.body能够使用就在index.js中
-  // 引入 const bodyParser = require('body-parser');
   const newAccount = new models.User({
     account: req.body.account,
     password: req.body.password

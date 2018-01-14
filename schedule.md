@@ -49,6 +49,10 @@
 
 #### day8
 - 略坑爹，muse-ui的icon有时候需要翻墙才能拿到图标。考虑一个个下载下来或者弄个vpn或者别人的cdn.
+- 已引入CDN：@import 'https://cdn.bootcss.com/material-design-icons/3.0.1/iconfont/material-icons.css';
+> https://www.2cto.com/kf/201707/658375.html
+
+#### day9
 
 
 
