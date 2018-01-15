@@ -38,7 +38,7 @@ export default {
   width: 100%;
   height: 28rem;
   overflow: hidden;
-  background-color: #888;
+  background-color: #fff;
 }
 .app-footer {
   width: 100%;

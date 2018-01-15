@@ -1,6 +1,6 @@
 <template>
   <section class="wrap">
-    <button @click="handleLogout">测试退出</button>
+    <!-- <button @click="handleLogout">测试退出</button> -->
     <mu-tabs
       :class="tabClass"
       :value="activeTab"
