@@ -60,10 +60,11 @@
       box-shadow: 0 0 1rem @deepPurpleA400;
       border-radius: .2rem;
       &:hover {
-        background-color: @deepPurpleA400;
+        background-color: @deepPurple700;
         color: #eee;
         box-shadow: 0 0 .5rem #fff;
         transition: all 1s ease;
+        flex: 1;
       }
       i,
       span {

@@ -37,7 +37,8 @@ export default {
 .app-content {
   width: 100%;
   height: 28rem;
-  overflow: hidden;
+  // overflow: hidden;
+  overflow: scroll;
   background-color: #fff;
 }
 .app-footer {

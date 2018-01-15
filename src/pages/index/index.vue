@@ -1,18 +1,46 @@
 <template>
   <div class="all-wrap">
-    <h1>主页版块</h1>
+    <movie-card
+      :movies="list"
+      :number="5"
+    ></movie-card>
+    <h1>haha</h1>
   </div>
 </template>
 
 <script>
+import movieCard from '@/components/movieCard';
 export default {
+  components: {
+    movieCard
+  },
   async created () {
     const me = this;
     await me.getList();
   },
   data () {
     return {
-      test: ''
+      test: '',
+      number: 4,
+      list: [{
+        image: 'xx',
+        text: 'yy'
+      }, {
+        image: 'zz',
+        text: 'xx'
+      }, {
+        image: 'ff',
+        text: 'haha'
+      }, {
+        image: 'hh',
+        text: 'hh'
+      }, {
+        image: 'hh',
+        text: 'hh'
+      }, {
+        image: 'hh',
+        text: 'hh'
+      }]
     };
   },
   methods: {

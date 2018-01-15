@@ -66,7 +66,7 @@ export default {
   // background-image: linear-gradient(180deg, @teal100, @lime400);
   // background-color: @indigo100;
   // background-color: #000;
-  background-color: #410C4F;
+  background-color: @deepPurple;
   // background-color: #7e57c2;
   // color: #fff;
   .user-content {
