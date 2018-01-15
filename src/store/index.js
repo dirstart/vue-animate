@@ -19,7 +19,9 @@ const state = {
   sideBar: {
     open: false,
     docked: true
-  }
+  },
+  searchBar: false
+
 }
 
 export default new Vuex.Store({

@@ -108,7 +108,7 @@ export default {
         console.log("res", res);
         me.snackMsg = res.data.msg;
         me.showSnackbar();
-        return;
+        return false;
       }
       // 这里是注册完成之后，应该是要做自动登录的，时间原因
     },
@@ -125,7 +125,7 @@ export default {
       if (!res.data.success) {
         me.snackMsg = res.data.msg;
         me.showSnackbar();
-        return;
+        return false;
       }
       console.log(res);
       // 当用户登录成功，通知 Vuex 里面的数据

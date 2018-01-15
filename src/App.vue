@@ -10,21 +10,26 @@
       <footer-bar></footer-bar>
     </div>
     <side-bar></side-bar>
+    <search-bar v-if="searchBar"></search-bar>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import topNav from '@/components/topNav'
 import footerBar from '@/components/footerBar'
 import sideBar from '@/components/sideBar'
+import searchBar from '@/components/searchBar'
 
 export default {
   name: 'app',
   components: {
     topNav,
     footerBar,
-    sideBar
-  }
+    sideBar,
+    searchBar
+  },
+  computed: mapState(['searchBar'])
 }
 </script>
 

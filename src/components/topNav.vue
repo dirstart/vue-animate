@@ -2,17 +2,30 @@
 <div class="all-wrap">
   <mu-appbar
     title="Title"
-    :zDepth="0"
+    class="user-group"
   >
-    <section class="top-user">
     <div class="user-icon" @click="showSideBar()">
-      <mu-icon
+       <mu-icon
         value="more_vert"
         color="blue"
-        class="tab-icon"></mu-icon>
-      <mu-avatar :src="user.avatar" class="my-avatar"></mu-avatar>
+        class="tab-icon"
+      ></mu-icon>
+      <mu-avatar
+        :src="user.avatar"
+        class="my-avatar"
+      ></mu-avatar> 
     </div>
-  </section>
+    <mu-raised-button
+      :label="headerTitle"
+      class="demo-raised-button top-where"
+      primary
+    />
+    <mu-icon
+      slot="right"
+      value="search"
+      color="#2e2c6b"
+      @click="showSearch"
+    />
   </mu-appbar>
 </div>
 </template>
@@ -26,15 +39,43 @@
       headerTitle: 'headerTitle'
     }),
     methods: {
-      ...mapMutations(['showSideBar'])
+      ...mapMutations(['showSideBar', 'showSearch'])
       // 打开侧边栏
-    }
+    },
   }
 </script>
 
 <style lang='less' scoped>
+.user-group {
+  position: relative;
+  height: 100%;
+  line-height: 100%;
+  padding-bottom: .2rem;
+  .user-icon {
+    .tab-icon {
+      height: 100%;
+      line-height: 100%;
+      font-size: 1.2rem;
+      vertical-align: middle;
+    }
+    .my-avatar {
+      vertical-align: middle;
+    }
+  }
+  .top-where {
+    position: relative;
+    display: inline-block;
+    width: 5rem;
+    margin-left: 2.4rem;
+  }
+  .user-icon,
+  .top-where {
+    display: inline-block;
+  }
+}
 
-// 已下均为初始时候自己的css，因时间原因暂时不用下面的了
+
+// 已下均为初始时候的
 // .top-bar {
 //   padding-top: 1rem;
 //   display: flex;

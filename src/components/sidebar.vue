@@ -63,7 +63,9 @@ export default {
 @import url('../assets/css/color.less');
 .all-wrap {
   // background-color: #000;
-  background-image: linear-gradient(180deg, @teal100, @lime400);
+  // background-image: linear-gradient(180deg, @teal100, @lime400);
+  background-color: @indigo100;
+  // color: #fff;
   .user-content {
     height: 6rem;
     padding: .5rem 0 0 1rem;

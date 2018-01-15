@@ -8,6 +8,10 @@ const mutations = {
     state.sideBar.open = !state.sideBar.open
     state.sideBar.docked = !state.sideBar.docked
   },
+  showSearch (state) {
+    state.searchBar = !state.searchBar;
+    console.log('打开了search');
+  },
   setUserData (state, userData) {
     state.user = userData
   }
