@@ -1,3 +1,32 @@
+### 项目结构
+#### vue-animte目录下
+> node.js 服务端
+> src 我们主要写的地方（前端页面）
+> static 静态文件（主要是不打包压缩的静态文件，一般存放在CDN中
+
+#### src关键目录
+> assets 需要打包的静态文件，诸如大图片，css
+> comonents Vue组件，一般是很多页面都要用到的组件，比如app头部，app底部
+> mock 测试用的，不管
+> old 之前写的垃圾文件，不管
+> pages !!!!!关键   所有的主页面都在里面
+> router  路由设置，就是我们网页的路径 www.baidu.com/baike
+www.baidu.com/zhidao  这里的zhidao和baike就是
+> store vuex，比较难说，不管
+
+#### pages
+> home 个人中心页面
+> index 主页
+> login 登录注册页面
+> movie 视频详情页面
+> nes 动态页面
+
+
+
+
+
+
+
 #### 进度表
 schedule.md
 #### Get
