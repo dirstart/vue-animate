@@ -35,6 +35,11 @@
   import { mapState, mapMutations } from 'vuex';
   export default {
     name: 'topNav',
+    data () {
+      return {
+        search: ''
+      };
+    },
     computed: mapState({
       user: state => state.user,
       headerTitle: 'headerTitle'

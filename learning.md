@@ -89,3 +89,9 @@ router.beforeEach((to, from, next) => {
 > mongoose没有设定集合的名字，默认会给你加 s!!!加s!!!加s!!! shit就变shits了懂吗！！
 > schema和model本身名字和  集合名字只有半毛钱关系。切记。
 > 需要 schema.set 或者 在 model 生成的时候命名
+> mongoose主要分为三部分：schema、model、entity 部分，三者的关系是：
+schema生成model，model生成entity
+
+#### 11.PC端的 `embed` 在移动端不能播放,  What FUCK!!!!
+> 感谢知乎大佬
+> https://www.zhihu.com/question/48306446/answer/139251608

@@ -3,6 +3,11 @@ schedule.md
 #### Get
 learning.md
 
+#### 视频种类分为
+> 1.warm
+2.awesome
+3.domestic
+
 * * *
 
 

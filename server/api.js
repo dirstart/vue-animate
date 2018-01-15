@@ -81,7 +81,7 @@ router.get('/api/logout', (req, res) => {
 //     }
 //   });
 // });
-router.get('/api/getMovieList', function(req, res) {
+router.get('/api/getMovieAll', function(req, res) {
   models.Movie.findAll(function(err, movies) {
     if (err) {
       console.log(err);
@@ -91,7 +91,7 @@ router.get('/api/getMovieList', function(req, res) {
       success: true,
       movies: movies
     })
-  }) 
+  });
 });
 
 

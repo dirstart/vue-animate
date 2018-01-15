@@ -12,6 +12,8 @@
       @input="input"
     />
     <mu-icon-button
+      :style="{marginRight: '1rem'}"
+      value="search"
       icon="search"
       slot="right" 
     />
@@ -37,7 +39,7 @@ export default {
   name: 'searchBar',
   data () {
     return {
-      value: ''
+      search: ''
     };
   },
   methods: {

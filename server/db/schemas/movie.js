@@ -24,28 +24,10 @@ var MovieSchema=new mongoose.Schema({
   }
 });
 
-MovieSchema.statics.findAll = function(err, callback) {
-  // this.find({}, callback);
-  console.log("这里是findAll方法");
-  console.log(this.find({}));
-  return this.find({});
+// 返回所有视频
+MovieSchema.statics.findAll = function(callback) {
+  console.log("数据库schema方法", this.model('Movie').find({}));
+  return this.model('Movie').find({}, callback);
 }
 
-
-// 定义静态方法，静态方法在Model层就能够使用
-// MovieSchema.statics={
-//   // 用fetch方法获取所有的数据
-//   fetch:function(callback){
-//     return this
-//     .find({})
-//     .sort('meta.updateAt')
-//     .exec(callback);
-//     // 根据更新的时间排序
-//   },
-//   findById:function(id,callback){
-//     return this
-//     .findOne({_id:id})
-//     .exec(callback);
-//   }
-// };
 module.exports=MovieSchema;
