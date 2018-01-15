@@ -59,6 +59,7 @@
     </mu-paper>
     <mu-snackbar
       v-if="snackbar"
+      class="snack-bar"
       :message="snackMsg"
       action="关闭"
       @actionClick="hideSnackbar"
@@ -68,6 +69,7 @@
 </template>
 
 <script>
+import util from '@/assets/js/util';
 export default {
   data () {
     return {
@@ -79,7 +81,9 @@ export default {
       activeTab: 'login',
       tabClass: 'login-tab',
       snackbar: false,
-      snackMsg: "找我干啥？"
+      snackMsg: '找我干啥？',
+      loadingLog: false,
+      loadingReg: false
     }
   },
   methods: {
@@ -88,35 +92,49 @@ export default {
       this.tabClass = val + '-tab';
       console.log(this.tabClass);
     },
-    handleRegister () {
+    async handleRegister () {
       const me = this;
+      if (!util.isEmpty(me.regName, me.regPsd)) {
+        me.snackMsg = "用户名和密码均不能为空";
+        me.showSnackbar();
+        return false;
+      }
       const param = {
-        account: me.account,
-        password: me.password
+        account: me.regName,
+        password: me.regPsd
       };
-      const res = me.axios.post('/api/login/createAccount', param);
-      if (!res) return;
-      console.log('result', res);
+      const res = await me.axios.post('/api/login/createAccount', param);
+      if (!res.success) {
+        console.log("res", res);
+        me.snackMsg = res.data.msg;
+        me.showSnackbar();
+        return;
+      }
+      // 这里是注册完成之后，应该是要做自动登录的，时间原因
     },
-    handleLogin () {
-      console.log("login start");
+    async handleLogin () {
+      console.log('login start');
       const me = this;
       const param = {
         account: me.logName,
         password: me.logPsd
       };
-      const res = me.axios.post('/api/login/signIn', param);
-      if (!res) {
-        console.log("登录失败");
+      me.loadingLog = true;
+      const res = await me.axios.post('/api/login/signIn', param);
+      me.loadingLog = false;
+      if (!res.data.success) {
+        me.snackMsg = res.data.msg;
+        me.showSnackbar();
         return;
       }
       console.log(res);
       // 当用户登录成功，通知 Vuex 里面的数据
       // vuex等级-> 显示Toast -> 跳转至首页
+      me.$router.push('home');
     },
-    handleLogout () {
+    async handleLogout () {
       const me = this;
-      const res = me.axios.get('/api/logout');
+      const res = await me.axios.get('/api/logout');
       console.log(res);
     },
     hideSnackbar () {
@@ -134,6 +152,9 @@ export default {
 
 <style lang='less' scoped>
 @import url('../../assets/css/color.less');
+.wrap {
+  position: relative;
+}
 .login-tab {
   background-color: @deepOrange300;
 }
@@ -157,5 +178,16 @@ export default {
 }
 .register-group {
   background-color: @yellow200;
+}
+.snack-bar {
+  font-size: .8rem;
+  color: @red600;
+}
+.loading {
+  position: absolute;
+  top: 8rem;
+  left: 8rem;
+  z-index: 100;
+  // background-color: #000;
 }
 </style>

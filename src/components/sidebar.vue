@@ -60,43 +60,45 @@ export default {
 </script>
 
 <style lang='less' scoped="">
-  .all-wrap {
-    background-color: #D6F0EC;
-    .user-content {
-      height: 6rem;
-      padding: .5rem 0 0 1rem;
-      border: 1px solid #000;
-      color: #fff;
-      .user-login {
-        height: 2.5rem;
-      }
-      .user-name,
-      .user-avatar {
-        display: inline-block;
-      }
-      .user-avatar {
-        .my-avatar {
-          width: 2rem;
-          height: 2rem;
-        }
-      }
-      .user-name {
-        margin-left: 1rem;
+@import url('../assets/css/color.less');
+.all-wrap {
+  // background-color: #000;
+  background-image: linear-gradient(180deg, @teal100, @lime400);
+  .user-content {
+    height: 6rem;
+    padding: .5rem 0 0 1rem;
+    border: 1px solid #000;
+    color: #fff;
+    .user-login {
+      height: 2.5rem;
+    }
+    .user-name,
+    .user-avatar {
+      display: inline-block;
+    }
+    .user-avatar {
+      .my-avatar {
+        width: 2rem;
         height: 2rem;
-        line-height: 2rem;
-        vertical-align: top;
-        font-size: .7rem;
-      }
-      .user-motto {
-        height: 2rem;
-        line-height: 1rem;
-        margin-top: .5rem;
-        font-size: .7rem;
       }
     }
-    .close {
-      // padding-top: 10rem;
-      margin-top: 10rem;
+    .user-name {
+      margin-left: 1rem;
+      height: 2rem;
+      line-height: 2rem;
+      vertical-align: top;
+      font-size: .7rem;
+    }
+    .user-motto {
+      height: 2rem;
+      line-height: 1rem;
+      margin-top: .5rem;
+      font-size: .7rem;
     }
   }
+  .close {
+    // padding-top: 10rem;
+    margin-top: 10rem;
+  }
+}
 </style>

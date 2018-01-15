@@ -6,7 +6,7 @@
     <main class="app-content main-content">
       <router-view/>
     </main>
-    <div class="app-footer main-content">
+    <div class="app-footer">
       <footer-bar></footer-bar>
     </div>
     <side-bar></side-bar>

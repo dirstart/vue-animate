@@ -1,20 +1,16 @@
 <template>
-<div class="all-wrap">
-  <mu-appbar
-    title="Title"
-    :zDepth="0"
-  >
-    <section class="top-user">
-    <div class="user-icon" @click="showSideBar()">
-      <mu-icon
-        value="more_vert"
-        color="blue"
-        class="tab-icon"></mu-icon>
-      <mu-avatar :src="user.avatar" class="my-avatar"></mu-avatar>
+  <div class="all-wrap">
+    <div class="top-bar">
+      <section class="top-user">
+        <div class="user-icon" @click="showSideBar()">
+          <mu-icon value="more_vert" color="blue" class="tab-icon"></mu-icon>
+          <mu-avatar :src="user.avatar" class="my-avatar"></mu-avatar>
+        </div>
+      </section>
+      <section class="top-where"> {{ headerTitle }} </section>
+      <section class="top-search"> 搜索 </section>
     </div>
-  </section>
-  </mu-appbar>
-</div>
+  </div>
 </template>
 
 <script>

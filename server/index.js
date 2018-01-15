@@ -41,16 +41,19 @@ app.use(session({
   saveUninitialized: true
 }));
 
-
 app.listen(port);
 console.log("success listen " + port + "...");
-app.use((req, res, next) => {
-  console.log("!!!!!", req.session);
-  const _user = req.session.user;
-  console.log(_user);
-  if (_user) {
-    app.locals.user = _user;
-  }
-  return next();
-});
+
+
+// app.use((req, res, next) => {
+//   // console.log("!!!!!", req.session);
+//   const _user = req.session.user;
+//   console.log(_user);
+//   if (_user) {
+//     app.locals.user = _user;
+//   }
+//   return next();
+// });
+
+
 app.use(api);

@@ -6,7 +6,17 @@ const userSchema = new mongoose.Schema({
     // 唯一的
     type: String
   },
-  password: String
+  password: String,
+  meta: {
+    createAt: {
+      type: Date,
+      default: Date.now()
+    },
+    updateAt: {
+      type: Date,
+      default: Date.now()
+    }
+  }
 });
 
 userSchema.pre('save', (next) => {

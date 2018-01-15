@@ -11,26 +11,32 @@ router.post('/api/login/createAccount', (req, res) => {
   models.User.findOne({ account: newAccount.account } , (err, user) => {
     if (err) {
       console.log(err);
+      return;
     }
     if (user) {
       console.log("该用户名已经存在");
       res.send({
         success: false,
-        data: "该用户名已存在"
+        msg: "用户已存在"
       });
     } else {
       const users = new models.User(newAccount);
       users.save((err, data) => {
         if (err) {
-          res.send(err);
+          res.send({
+            success: false,
+            msg: "数据库错误"
+          });
         } else {
-          res.send('createAccount Successed');
+          res.send({
+            success: true,
+            msg: "创建成功"
+          });
           console.log("注册成功");
         }
       });
     }
   });
-  
 });
 
 // 2.用户登录
@@ -47,7 +53,7 @@ router.post('/api/login/signIn', (req, res) => {
       console.log("用户不存在或者密码错误");
       res.send({
         success: false,
-        data: "用户不存在或者密码错误"
+        msg: "用户不存在或者密码错误"
       })
     } else {
       req.session.user = user;
@@ -80,7 +86,7 @@ router.get('/api/login/getAccount', (req, res) => {
 });
 
 router.get('/', (req, res) => {
-  console.log('user in session:', req.session.user);
+  // console.log('user in session:', req.session.user);
 });
 
 
