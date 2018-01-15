@@ -41,7 +41,7 @@
     methods: {
       ...mapMutations(['showSideBar', 'showSearch'])
       // 打开侧边栏
-    },
+    }
   }
 </script>
 

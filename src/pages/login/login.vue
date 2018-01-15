@@ -95,7 +95,7 @@ export default {
     async handleRegister () {
       const me = this;
       if (!util.isEmpty(me.regName, me.regPsd)) {
-        me.snackMsg = "用户名和密码均不能为空";
+        me.snackMsg = '用户名和密码均不能为空';
         me.showSnackbar();
         return false;
       }
@@ -105,7 +105,7 @@ export default {
       };
       const res = await me.axios.post('/api/login/createAccount', param);
       if (!res.success) {
-        console.log("res", res);
+        console.log('res', res);
         me.snackMsg = res.data.msg;
         me.showSnackbar();
         return false;

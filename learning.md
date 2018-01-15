@@ -79,3 +79,8 @@ router.beforeEach((to, from, next) => {
 ```
 #### 8.vue-router里面绑定click
 > `@click.native = functionName` will be OK.
+
+#### 9.究极深坑
+> webpack那群人天天更新，真是太敬业了，可坑了小白。
+以前本来是直接可以用手机开的。现在在去 server/index.js下改dev为 0.0.0.0
+> https://www.cnblogs.com/wangyanhua95/p/7954019.html
