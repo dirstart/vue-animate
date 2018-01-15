@@ -84,3 +84,8 @@ router.beforeEach((to, from, next) => {
 > webpack那群人天天更新，真是太敬业了，可坑了小白。
 以前本来是直接可以用手机开的。现在在去 server/index.js下改dev为 0.0.0.0
 > https://www.cnblogs.com/wangyanhua95/p/7954019.html
+
+#### 10.惊天神坑
+> mongoose没有设定集合的名字，默认会给你加 s!!!加s!!!加s!!! shit就变shits了懂吗！！
+> schema和model本身名字和  集合名字只有半毛钱关系。切记。
+> 需要 schema.set 或者 在 model 生成的时候命名

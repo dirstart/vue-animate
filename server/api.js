@@ -73,17 +73,27 @@ router.get('/api/logout', (req, res) => {
   res.send("登出成功");
 });
 
-// 获取已有账号接口
-router.get('/api/login/getAccount', (req, res) => {
-  // 通过模型去查找数据库
-  models.User.find((err, data) => {
+// 4.获取电影源
+// app.get('/admin/list', function(req, res) {
+//   Movie.fetch(function(err, movies) {
+//     if (err) {
+//       console.log(err);
+//     }
+//   });
+// });
+router.get('/api/getMovieList', function(req, res) {
+  models.Movie.findAll(function(err, movies) {
     if (err) {
-      res.send(err);
-    } else {
-      res.send('data');
+      console.log(err);
     }
-  });
+    console.log(movies);
+    res.send({
+      success: true,
+      movies: movies
+    })
+  }) 
 });
+
 
 router.get('/', (req, res) => {
   // console.log('user in session:', req.session.user);

@@ -21,6 +21,7 @@
       primary
     />
     <mu-icon
+      :style="{marginRight: '1rem'}"
       slot="right"
       value="search"
       color="#2e2c6b"
@@ -68,8 +69,12 @@
     width: 5rem;
     margin-left: 2.4rem;
   }
+  .top-search {
+    // margin-right: 1rem;
+  }
   .user-icon,
-  .top-where {
+  .top-where,
+  .top-search {
     display: inline-block;
   }
 }
