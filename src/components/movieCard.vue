@@ -9,7 +9,9 @@
       <i class="iconfont icon-more title-icon"></i>
       <span class="title-tip">更多</span>
     </div>
-    <ul class="movie-list">
+    <ul
+      class="movie-list"
+    >
       <li
         class="movie-item"
         v-for="item in movies.slice(0,number)"
@@ -49,7 +51,7 @@ export default {
     },
     titleColor: {
       type: String,
-      default: '#5029EB'
+      default: '#B73CFB'
     }
   }
 };
@@ -62,6 +64,7 @@ export default {
   background-color: #10002e;
   box-shadow: 0 0 .1rem #000;
   border-radius: .2rem;
+  margin-bottom: .5rem;
 }
 .movie-title {
   width: 100%;
@@ -90,8 +93,8 @@ export default {
 }
 .movie-list {
   width: 100%;
-  background-color: #888;
   padding: 2%;
+  background-color: #EBD0F0;
 }
 .movie-item {
   margin-bottom: .6rem;
@@ -100,6 +103,7 @@ export default {
   display: inline-block;
   border-radius: .2rem;
   background-color: #fff;
+  border: 1px solid #eee;
   &:nth-child(odd) {
     margin-right: 4%;
   }

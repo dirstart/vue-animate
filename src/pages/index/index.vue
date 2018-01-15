@@ -2,9 +2,18 @@
   <div class="all-wrap">
     <movie-card
       :movies="list"
-      :number="4"
+      :number="2"
     ></movie-card>
-    <h1>haha</h1>
+    <movie-card
+      :movies="list"
+      :number="2"
+      titleColor="#E968CE"
+    ></movie-card>
+    <movie-card
+      :movies="list"
+      :number="4"
+      titleColor="#E968CE"
+    ></movie-card>
   </div>
 </template>
 
