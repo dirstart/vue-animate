@@ -7,12 +7,14 @@
     <movie-card
       :movies="list"
       :number="2"
+      title="无敌剧情"
       titleColor="#E968CE"
     ></movie-card>
     <movie-card
       :movies="list"
       :number="4"
-      titleColor="#E968CE"
+      title="国产热播"
+      titleColor="#423CD5"
     ></movie-card>
   </div>
 </template>

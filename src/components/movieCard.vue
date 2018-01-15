@@ -111,7 +111,8 @@ export default {
     display: block;
     width: 100%;
     height: 5.6rem;
-    background-color: #DD3C3C;
+    // background-color: #DD3C3C;
+    background-color: #DBCECE;
   }
 }
 .movie-text {
