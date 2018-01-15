@@ -1,6 +1,11 @@
 <template>
-  <div class="all-wrap">
+  <div>
     <h1>主页版块</h1>
+    <iframe
+      class="movie-show"
+      src='http://player.youku.com/embed/XMTMyNjM2MDk4NA=='
+      frameborder=0
+    ></iframe>
   </div>
 </template>
 
@@ -28,9 +33,13 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.all-wrap {
-  width: 100%;
-  height: 100%;
-  background-color: #eff;
-}
+  div {
+    width: 100%;
+    height: 20rem;
+    // background-color: #089e8a;
+    .movie-show {
+      width: 100%;
+      height: 10rem;
+    }
+  }
 </style>

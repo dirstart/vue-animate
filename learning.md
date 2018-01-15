@@ -95,3 +95,7 @@ schema生成model，model生成entity
 #### 11.PC端的 `embed` 在移动端不能播放,  What FUCK!!!!
 > 感谢知乎大佬
 > https://www.zhihu.com/question/48306446/answer/139251608
+另外，要注意了。这个 iframe 的宽高只能用  px 和 百分比表示，rem 无效
+pixels
+percent
+！！！！！！！！！！听说 H5 可以用 video 和 source，不过没时间了，先用iframe

@@ -12,7 +12,7 @@
       @input="input"
     />
     <mu-icon-button
-      :style="{marginRight: '1rem'}"
+      :style="{marginRight: '2rem',marginTop: '.3rem'}"
       value="search"
       icon="search"
       slot="right" 

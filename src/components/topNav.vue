@@ -15,13 +15,15 @@
         class="my-avatar"
       ></mu-avatar> 
     </div>
-    <mu-raised-button
-      :label="headerTitle"
-      class="demo-raised-button top-where"
-      primary
-    />
+    <div class="top-where">
+      <mu-raised-button
+        :label="headerTitle"
+        class="demo-raised-button button-font"
+        primary
+      />
+    </div>
     <mu-icon
-      :style="{marginRight: '1rem'}"
+      :style="{marginRight: '2rem',marginTop: '.3rem'}"
       slot="right"
       value="search"
       color="#2e2c6b"
@@ -69,13 +71,18 @@
     }
   }
   .top-where {
-    position: relative;
-    display: inline-block;
+    position: absolute;
     width: 5rem;
-    margin-left: 2.4rem;
+    text-align: center;
+    top: .1rem;
+    left: 50%;
+    margin-left: -2.5rem;
+    .button-font {
+      font-size: .9rem;
+    }
   }
   .top-search {
-    // margin-right: 1rem;
+    margin-right: 1rem;
   }
   .user-icon,
   .top-where,

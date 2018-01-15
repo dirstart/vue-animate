@@ -1,18 +1,18 @@
 <template>
-  <div class="all-wrap">
-    <ul>
-      <router-link 
-        tag="li"
-        v-for="(item,key) in bars"
-        :key="key"
-        :to="item.to"
-        @click.native="handleClick(item.text)"
-      >
-        <i class="iconfont" :class="`icon-${item.icon}`"></i>
-        <span>{{ item.text }}</span>
-      </router-link>
-    </ul>
-  </div>
+<div class="all-wrap">
+  <ul>
+    <router-link 
+      tag="li"
+      v-for="(item,key) in bars"
+      :key="key"
+      :to="item.to"
+      @click.native="handleClick(item.text)"
+    >
+      <i class="iconfont" :class="`icon-${item.icon}`"></i>
+      <span>{{ item.text }}</span>
+    </router-link>
+  </ul>
+</div>
 </template>
 
 <script>
@@ -40,6 +40,7 @@
 </script>
 
 <style lang="less" scoped="">
+  @import '../assets/css/color.less';
   .all-wrap {
     width: 100%;
     background-color: #f0f0f0;
@@ -47,13 +48,23 @@
   ul {
     display: flex;
     width: 100%;
-    background-color: #08558a;
+    background-color: #7e57c2;
 
     > li {
-      margin: .4rem .4rem 0 .4rem;
+      margin: .4rem .4rem .2rem .4rem;
       flex: 1;
       line-height: 1rem;
-      background-color: #7FEB9B;
+      color: #fff;
+      background-color: @deepPurpleA400;
+      // background-color: #4B0F48;
+      box-shadow: 0 0 1rem @deepPurpleA400;
+      border-radius: .2rem;
+      &:hover {
+        background-color: @deepPurpleA400;
+        color: #eee;
+        box-shadow: 0 0 .5rem #fff;
+        transition: all 1s ease;
+      }
       i,
       span {
         display: inline-block;

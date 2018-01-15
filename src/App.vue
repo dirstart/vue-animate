@@ -36,8 +36,9 @@ export default {
 <style lang="less" scoped>
 .app-content {
   width: 100%;
-  height: 100%;
-  overflow-y: scroll;
+  height: 28rem;
+  overflow: hidden;
+  background-color: #888;
 }
 .app-footer {
   width: 100%;

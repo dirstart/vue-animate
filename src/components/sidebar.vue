@@ -67,6 +67,7 @@ export default {
   // background-color: @indigo100;
   // background-color: #000;
   background-color: #410C4F;
+  // background-color: #7e57c2;
   // color: #fff;
   .user-content {
     height: 6rem;
