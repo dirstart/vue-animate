@@ -5,7 +5,7 @@
     class="user-group"
   >
     <div class="user-icon" @click="showSideBar()">
-       <mu-icon
+      <mu-icon
         value="more_vert"
         color="blue"
         class="tab-icon"
