@@ -2,7 +2,7 @@
   <div class="all-wrap">
     <movie-card
       :movies="list"
-      :number="5"
+      :number="4"
     ></movie-card>
     <h1>haha</h1>
   </div>
@@ -21,7 +21,6 @@ export default {
   data () {
     return {
       test: '',
-      number: 4,
       list: [{
         image: 'xx',
         text: 'yy'

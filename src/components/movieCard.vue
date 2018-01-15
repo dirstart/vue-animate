@@ -1,6 +1,14 @@
 <template>
   <div class="all-group">
-    <h1 class="movie-title"> {{title}} </h1>
+    <!-- <h1 class="movie-title"> {{title}} </h1> -->
+    <div
+      class="movie-title"
+      :style="{backgroundColor: titleColor}"
+    >
+      <span class="title-text"> {{title}} </span>
+      <i class="iconfont icon-more title-icon"></i>
+      <span class="title-tip">更多</span>
+    </div>
     <ul class="movie-list">
       <li
         class="movie-item"
@@ -29,7 +37,7 @@ export default {
   props: {
     title: {
       type: String,
-      default: '我是这个组件的标题'
+      default: '温馨治愈'
     },
     movies: {
       type: Array,
@@ -38,6 +46,10 @@ export default {
     number: {
       type: Number,
       default: 2
+    },
+    titleColor: {
+      type: String,
+      default: '#5029EB'
     }
   }
 };
@@ -55,8 +67,26 @@ export default {
   width: 100%;
   height: 2rem;
   line-height: 2rem;
-  background-color: @purple400;
+  // background-color: @purple400;
   color: #fff;
+  .title-text,
+  .title-icon,
+  .title-tip {
+    // font-size: .5rem;
+  }
+  .title-text {
+    padding-left: 1rem;
+    font-size: .8rem;
+    text-shadow: 0 0 .5rem #fff;
+  }
+  .title-icon,
+  .title-tip {
+    float: right;
+    font-size: .5rem;
+  }
+  .title-icon {
+    margin-right: .2rem;
+  }
 }
 .movie-list {
   width: 100%;
@@ -114,5 +144,9 @@ export default {
   .text-type {
     margin-left: 1rem;
   }
+}
+.icon-more {
+  width: 1rem;
+  height: 1rem;
 }
 </style>
