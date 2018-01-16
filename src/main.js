@@ -21,9 +21,9 @@ new Vue({
   router,
   store,
   template: '<App/>',
-  components: { App },
+  components: { App }
   // 组件创建之前异步请求数据
-  beforeCreate () {
-    this.$store.dispatch('init', this)
-  }
+  // beforeCreate () {
+  //   this.$store.dispatch('init', this)
+  // }
 })

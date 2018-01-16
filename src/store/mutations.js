@@ -13,7 +13,8 @@ const mutations = {
     console.log('打开了search');
   },
   setUserData (state, userData) {
-    state.user = userData
+    state.user.name = userData.name
+    console.log(state.user);
   }
 };
 

@@ -13,15 +13,15 @@ const state = {
   login: false,
   headerTitle: '首页',
   user: {
-    name: 'test',
-    avatar: 'cao'
+    name: '未登录',
+    avatar: 'https://sfault-avatar.b0.upaiyun.com/147/223/147223148-573297d0913c5_huge256'
   },
   sideBar: {
     open: false,
     docked: true
   },
-  searchBar: false
-
+  searchBar: false,
+  userName: '默认'
 }
 
 export default new Vuex.Store({

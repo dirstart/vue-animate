@@ -70,6 +70,7 @@
 
 <script>
 import util from '@/assets/js/util';
+import { mapMutations } from 'vuex';
 export default {
   data () {
     return {
@@ -87,6 +88,7 @@ export default {
     }
   },
   methods: {
+    ...mapMutations(['setUserData']),
     handleTabChange (val) {
       this.activeTab = val;
       this.tabClass = val + '-tab';
@@ -128,6 +130,7 @@ export default {
         return false;
       }
       console.log(res);
+      me.setUserData({ name: '123' });
       // 当用户登录成功，通知 Vuex 里面的数据
       // vuex等级-> 显示Toast -> 跳转至首页
       me.$router.push('home');
