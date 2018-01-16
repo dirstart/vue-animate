@@ -73,14 +73,7 @@ router.get('/api/logout', (req, res) => {
   res.send("登出成功");
 });
 
-// 4.获取电影源
-// app.get('/admin/list', function(req, res) {
-//   Movie.fetch(function(err, movies) {
-//     if (err) {
-//       console.log(err);
-//     }
-//   });
-// });
+// 4.获取所有电影
 router.get('/api/getMovieAll', function(req, res) {
   models.Movie.findAll(function(err, movies) {
     if (err) {
@@ -94,6 +87,16 @@ router.get('/api/getMovieAll', function(req, res) {
   });
 });
 
+// 5.根据类型获取电影
+router.post('/api/getMovieByType', function(req, res) {
+  models.Movie.findByType(function(err, movies) {
+    console.log("这是查询之后的结果", movies);
+    res.send({
+      success: true,
+      movies: movies
+    });
+  });
+});
 
 router.get('/', (req, res) => {
   // console.log('user in session:', req.session.user);

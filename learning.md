@@ -99,3 +99,15 @@ schema生成model，model生成entity
 pixels
 percent
 ！！！！！！！！！！听说 H5 可以用 video 和 source，不过没时间了，先用iframe
+
+#### 12.坑爹的数据库问题，还是要看文档啊。
+> router.post('/api/getMovieByType', function(req, res) {
+  models.Movie.findByType(function(err, movies) {
+    console.log("这是查询之后的结果", movies);
+    res.send({
+      success: true,
+      movies: movies
+    });
+  });
+});
+！！！！！！！需要注意的是 models.Movie.find()   这里的第一个参数永远是err，懂吗！！

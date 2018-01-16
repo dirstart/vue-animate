@@ -62,8 +62,8 @@ export default {
 .all-group {
   width: 100%;
   background-color: #10002e;
-  box-shadow: 0 0 .1rem #000;
-  border-radius: .2rem;
+  box-shadow: 0 0 .1rem #C0A5E1;
+  // border-radius: .2rem;
   margin-bottom: .5rem;
 }
 .movie-title {

@@ -8,12 +8,11 @@
     <mu-text-field class="appbar-search-field input-group"
       slot="default"
       hintText="魔法禁书目录"
-      v-model="value"
+      v-model="searchValue"
       @input="input"
     />
     <mu-icon-button
       :style="{marginRight: '2rem',marginTop: '.3rem'}"
-      value="search"
       icon="search"
       slot="right" 
     />
@@ -39,7 +38,7 @@ export default {
   name: 'searchBar',
   data () {
     return {
-      search: ''
+      searchValue: ''
     };
   },
   methods: {

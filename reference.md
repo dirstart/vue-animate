@@ -7,3 +7,6 @@
 
 3.关于登录注册和session
 > http://blog.csdn.net/qq_33401924/article/details/52947514
+
+4.关于MongoDB的查询
+> https://www.cnblogs.com/zhongweiv/p/mongoose.html#mg_count

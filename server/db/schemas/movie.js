@@ -29,5 +29,20 @@ MovieSchema.statics.findAll = function(callback) {
   console.log("数据库schema方法", this.model('Movie').find({}));
   return this.model('Movie').find({}, callback);
 }
+// 根据 type 返回视频
+MovieSchema.statics.findByType = function(callback) {
+  console.log("数据库schema方法", this.model('Movie').find({}));
+  return this.model('Movie').find({}, callback);
+  // console.log("这是查询所有数据的？", this.model('Movie').find({}));
+  // console.log("查询单挑", this.model('Movie').find({ "type": "1" }, callback));
+  // const opt = { "type": "1" };
+  // console.log(this.model('Movie').find(opt, function(err ,res))
+  // console.log(this.model('Movie').find(opt));
+  // return this.model('Movie').find(opt, callback);
+  // console.log("返回了什么数据呢", this.model('Movie').find({}));
+  // if (!type.length) return this.callback;
+  // return this.model('Movie').find({type: type}, callback);
+  // return this.model('Movie').find({});
+}
 
 module.exports=MovieSchema;
