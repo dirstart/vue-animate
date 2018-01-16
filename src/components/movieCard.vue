@@ -22,7 +22,7 @@
           <span class="text-title">{{item.title}}</span>
           <span class="text-type">{{item.language}}</span>
           <span class="text-dot">&nbsp;·&nbsp;</span>
-          <span class="text-name"> {{item.year}} {{item._id}}</span>
+          <span class="text-name"> {{item.year}}</span>
           <mu-icon
             value="more_vert"
             color="blue"

@@ -11,6 +11,8 @@ import News from '@/pages/news/news'
 
 import Detail from '@/pages/movie/detail';
 
+import Result from '@/pages/search/result';
+
 import NotFound from '@/pages/notfound/notfound'
 
 Vue.use(Router)
@@ -57,6 +59,13 @@ const router = new Router({
       component: Detail,
       meta: {
         title: '动漫细节'
+      }
+    },
+    {
+      path: '/result/:name',
+      component: Result,
+      meta: {
+        title: '搜索结果'
       }
     },
     {

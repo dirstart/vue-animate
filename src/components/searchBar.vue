@@ -14,22 +14,22 @@
     <mu-icon-button
       :style="{marginRight: '2rem',marginTop: '.3rem'}"
       icon="search"
-      slot="right" 
+      slot="right"
+      @click.native="handleSearch"
     />
   </mu-appbar>
   <mu-list>
     <mu-sub-header>在输入框中，输入视频名或者用户名</mu-sub-header>
-    <!-- <div>这里可以放点东西推荐用户</div> -->
   </mu-list>
 <!--       <div v-for="item of friend">
-      <mu-list-item :title="item.name"
-                    @click="showPersonindex_x(item._id)">
-        <mu-avatar :src="item.avatar"
-                   slot="leftAvatar" />
-        <mu-icon value="chat_bubble"
-                 slot="right" />
-      </mu-list-item>
-    </div> -->
+<mu-list-item :title="item.name"
+@click="showPersonindex_x(item._id)">
+<mu-avatar :src="item.avatar"
+slot="leftAvatar" />
+<mu-icon value="chat_bubble"
+slot="right" />
+</mu-list-item>
+</div> -->
 </div>
 </template>
 <script>
@@ -45,6 +45,11 @@ export default {
     ...mapMutations(['showSearch']),
     input (val) {
       console.log('test input');
+    },
+    handleSearch () {
+      const me = this;
+      me.showSearch(); // 搜索后关闭搜索框
+      me.$router.push({ path: `/result/${me.searchValue}` });
     }
   }
 }

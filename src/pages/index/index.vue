@@ -53,7 +53,7 @@ export default {
       const me = this;
       const param = { type: type };
       const res = await me.axios.post('/api/getMovieByType', param);
-      if (res.success) return;
+      // if (res.success) return;
       me[`${type}List`] = res.data.movies;
     }
   }

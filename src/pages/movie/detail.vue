@@ -1,11 +1,22 @@
 <template>
   <div>
-    <h1>主页版块</h1>
+    <h1>播放板块</h1>
     <iframe
       class="movie-show"
-      src='http://player.youku.com/embed/XMTMyNjM2MDk4NA=='
+      :src="movieItem.flash"
       frameborder=0
+      quality="high"
+      type="application/x-shockwave-flash"
+      allowFullScreen="true"
+      width="100px"
+      height="100px"
     ></iframe>
+    <p>{{movieItem.doctor}}</p>
+    <p>{{movieItem.language}}</p>
+    <p>{{movieItem.title}}</p>
+    <p>{{movieItem.type}}</p>
+    <p>{{movieItem.year}}</p>
+    <p>{{movieItem.summary}}</p>
   </div>
 </template>
 
@@ -13,20 +24,23 @@
 export default {
   async created () {
     const me = this;
-    await me.getList();
+    console.log('param', this.$route.params.id);
+    me.id = this.$route.params.id;
+    await me.getMovie(me.id);
   },
   data () {
     return {
-      test: ''
+      id: '',
+      movieItem: []
     };
   },
   methods: {
-    async getList () {
+    async getMovie (id) {
       const me = this;
-      const res = await me.axios.get('/api/getMovieAll');
-      if (res.success) return;
-      me.test = res.data.movies[0].flash;
-      console.log('data', res);
+      const res = await me.axios.get(`/api/getDetail/${id}`);
+      console.log('res', res);
+      if (!res.data.success) return;
+      me.movieItem = res.data.movie;
     }
   }
 }

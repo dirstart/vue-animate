@@ -34,4 +34,14 @@ MovieSchema.statics.findByType = function(opt, callback) {
   return this.find(opt).exec(callback);
 }
 
+// 根据 id 返回视频
+MovieSchema.statics.findById = function(id, callback) {
+  return this.findOne({_id: id}).exec(callback);
+}
+
+// 根据 名字返回视频
+MovieSchema.statics.findByName = function(opt, callback) {
+  return this.find(opt).exec(callback);
+}
+
 module.exports=MovieSchema;
