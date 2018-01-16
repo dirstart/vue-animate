@@ -89,14 +89,36 @@ router.get('/api/getMovieAll', function(req, res) {
 
 // 5.根据类型获取电影
 router.post('/api/getMovieByType', function(req, res) {
-  models.Movie.findByType(function(err, movies) {
-    console.log("这是查询之后的结果", movies);
+  const opt = req.body;
+  console.log(opt);
+  models.Movie.findByType(opt, function(err, movies) {
+    if (err) {
+      console.log(err);
+      res.send({
+        success: false
+      });
+      return false;
+    }
     res.send({
       success: true,
       movies: movies
     });
   });
 });
+
+// models.User.findOne({ account: newAccount.account } , (err, user) => {
+//     if (err) {
+//       console.log(err);
+//       return;
+//     }
+//     if (user) {
+//       console.log("该用户名已经存在");
+//       res.send({
+//         success: false,
+//         msg: "用户已存在"
+//       });
+//     } else {
+//       const 
 
 router.get('/', (req, res) => {
   // console.log('user in session:', req.session.user);

@@ -1,17 +1,17 @@
 <template>
   <div class="all-wrap">
     <movie-card
-      :movies="list"
+      :movies="warmList"
       :number="2"
     ></movie-card>
     <movie-card
-      :movies="list"
+      :movies="awesomeList"
       :number="2"
       title="无敌剧情"
       titleColor="#E968CE"
     ></movie-card>
     <movie-card
-      :movies="list"
+      :movies="domesticList"
       :number="4"
       title="国产热播"
       titleColor="#423CD5"
@@ -28,25 +28,6 @@ export default {
   data () {
     return {
       test: '',
-      list: [{
-        image: 'xx',
-        text: 'yy'
-      }, {
-        image: 'zz',
-        text: 'xx'
-      }, {
-        image: 'ff',
-        text: 'haha'
-      }, {
-        image: 'hh',
-        text: 'hh'
-      }, {
-        image: 'hh',
-        text: 'hh'
-      }, {
-        image: 'hh',
-        text: 'hh'
-      }],
       domesticList: [],
       awesomeList: [],
       warmList: []
@@ -55,7 +36,9 @@ export default {
   async created () {
     const me = this;
     await me.getList();
-    await me.getDomestic()
+    await me.getDomestic("domestic");
+    await me.getDomestic("awesome");
+    await me.getDomestic("warm");
   },
   methods: {
     async getList () {
@@ -65,14 +48,12 @@ export default {
       me.test = res.data.movies[0].flash;
       console.log('data', res);
     },
-    async getDomestic () {
+    async getDomestic (type) {
       const me = this;
-      const param = {
-        type: "domestic"
-      };
+      const param = { type: type };
       const res = await me.axios.post('/api/getMovieByType', param);
-      if (res.success) console.log("失败了");
-      console.log("res返回的东西", res);
+      if (res.success) return;
+      me[`${type}List`] = res.data.movies;
     }
   }
 }

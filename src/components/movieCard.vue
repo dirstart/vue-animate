@@ -16,12 +16,12 @@
         class="movie-item"
         v-for="item in movies.slice(0,number)"
       >
-        <img src="" alt="" class="movie-pic" />
+        <img :src="item.poster" alt="" class="movie-pic" />
         <section class="movie-text">
-          <span class="text-title">全名</span>
-          <span class="text-type">类型</span>
+          <span class="text-title">{{item.title}}</span>
+          <span class="text-type">{{item.language}}</span>
           <span class="text-dot">&nbsp;·&nbsp;</span>
-          <span class="text-name">名字</span>
+          <span class="text-name"> {{item.year}} </span>
           <mu-icon
             value="more_vert"
             color="blue"
