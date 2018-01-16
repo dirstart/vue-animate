@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  async created() {
+  async created () {
     const me = this;
     await me.getList();
   },
@@ -21,7 +21,7 @@ export default {
     };
   },
   methods: {
-    async getList() {
+    async getList () {
       const me = this;
       const res = await me.axios.get('/api/getMovieAll');
       if (res.success) return;

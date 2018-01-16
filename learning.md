@@ -111,3 +111,6 @@ percent
   });
 });
 ！！！！！！！需要注意的是 models.Movie.find()   这里的第一个参数永远是err，懂吗！！
+
+#### 13.关于路由导航，使用 模板字符串失败了，只好跑去用编程式导航了
+> https://router.vuejs.org/zh-cn/essentials/navigation.html

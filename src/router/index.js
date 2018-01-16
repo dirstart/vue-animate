@@ -9,6 +9,8 @@ import Home from '@/pages/home/home'
 
 import News from '@/pages/news/news'
 
+import Detail from '@/pages/movie/detail';
+
 import NotFound from '@/pages/notfound/notfound'
 
 Vue.use(Router)
@@ -48,6 +50,13 @@ const router = new Router({
       component: News,
       meta: {
         title: '动态'
+      }
+    },
+    {
+      path: '/detail/:id',
+      component: Detail,
+      meta: {
+        title: '动漫细节'
       }
     },
     {

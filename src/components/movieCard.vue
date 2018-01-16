@@ -13,6 +13,7 @@
       class="movie-list"
     >
       <li
+        @click="handleClick(item)"
         class="movie-item"
         v-for="item in movies.slice(0,number)"
       >
@@ -21,7 +22,7 @@
           <span class="text-title">{{item.title}}</span>
           <span class="text-type">{{item.language}}</span>
           <span class="text-dot">&nbsp;·&nbsp;</span>
-          <span class="text-name"> {{item.year}} </span>
+          <span class="text-name"> {{item.year}} {{item._id}}</span>
           <mu-icon
             value="more_vert"
             color="blue"
@@ -52,6 +53,11 @@ export default {
     titleColor: {
       type: String,
       default: '#B73CFB'
+    }
+  },
+  methods: {
+    handleClick (item) {
+      this.$router.push({ path: `/detail/${item._id}` });
     }
   }
 };

@@ -106,6 +106,28 @@ router.post('/api/getMovieByType', function(req, res) {
   });
 });
 
+// 6.看动漫
+router.get('/movie/:id', function(req, res) {
+  var id = req.params.id;
+  console.log("这个/movie/:id的网页中的id是:" + id);
+  if (id) {
+    Movie.findById(id, function(err, movie) {
+      if (err) {
+        console.log("在这里出现了错误");
+        return;
+      }
+      console.log(movie.title);
+      console.log(movie);
+      res.render('detail', {
+        title: "oh" + movie.title,
+        movie: movie
+      });
+      //这里的意思其实给detail这个html文件传值
+      console.log("这里已经走完了一次if");
+    });
+  }
+});
+
 // models.User.findOne({ account: newAccount.account } , (err, user) => {
 //     if (err) {
 //       console.log(err);

@@ -3,11 +3,12 @@
     <movie-card
       :movies="warmList"
       :number="2"
+      title="温馨治愈"
     ></movie-card>
     <movie-card
       :movies="awesomeList"
       :number="2"
-      title="无敌剧情"
+      title="剧情党"
       titleColor="#E968CE"
     ></movie-card>
     <movie-card
@@ -36,9 +37,9 @@ export default {
   async created () {
     const me = this;
     await me.getList();
-    await me.getDomestic("domestic");
-    await me.getDomestic("awesome");
-    await me.getDomestic("warm");
+    await me.getDomestic('domestic');
+    await me.getDomestic('awesome');
+    await me.getDomestic('warm');
   },
   methods: {
     async getList () {
