@@ -1,6 +1,5 @@
 <template>
   <div class="all-group">
-    <!-- <h1 class="movie-title"> {{title}} </h1> -->
     <div
       class="movie-title"
       :style="{backgroundColor: titleColor}"

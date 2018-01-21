@@ -57,5 +57,16 @@
 - 新改页面头部
 - 新改页面登录注册页，全用组件了，一个个样式自己调太慢了
 
+#### day10
+> 没时间写文档了。。。下面直接放图。。
+![](https://raw.githubusercontent.com/dirstart/image_bed/master/last7.png)
+![](https://raw.githubusercontent.com/dirstart/image_bed/master/last8.png)
+![](https://raw.githubusercontent.com/dirstart/image_bed/master/last9.png)
+![](https://raw.githubusercontent.com/dirstart/image_bed/master/last10.jpg)
+![](https://raw.githubusercontent.com/dirstart/image_bed/master/last11.jpg)
+![](https://raw.githubusercontent.com/dirstart/image_bed/master/last12.jpg)
+![](https://raw.githubusercontent.com/dirstart/image_bed/master/last13.png)
+
+
 
 

@@ -112,7 +112,6 @@ export default {
         me.showSnackbar();
         return false;
       }
-      // 这里是注册完成之后，应该是要做自动登录的，时间原因
     },
     async handleLogin () {
       console.log('login start');

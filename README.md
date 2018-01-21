@@ -1,36 +1,16 @@
-### 项目结构
-#### vue-animte目录下
-> node.js 服务端
-> src 我们主要写的地方（前端页面）
-> static 静态文件（主要是不打包压缩的静态文件，一般存放在CDN中
-
-#### src关键目录
-> assets 需要打包的静态文件，诸如大图片，css
-> comonents Vue组件，一般是很多页面都要用到的组件，比如app头部，app底部
-> mock 测试用的，不管
-> old 之前写的垃圾文件，不管
-> pages !!!!!关键   所有的主页面都在里面
-> router  路由设置，就是我们网页的路径 www.baidu.com/baike
-www.baidu.com/zhidao  这里的zhidao和baike就是
-> store vuex，比较难说，不管
-
-#### pages
-> home 个人中心页面
-> index 主页
-> login 登录注册页面
-> movie 视频详情页面
-> nes 动态页面
+#### 最终效果图（截止至 2018-01-21）
+> 因为时间原因，后面代码越写越烂越偷懒了。归根结底还是我对任务的时间管理有问题。
+![](https://raw.githubusercontent.com/dirstart/image_bed/master/last8.png)
+![](https://raw.githubusercontent.com/dirstart/image_bed/master/last9.png)
+![](https://raw.githubusercontent.com/dirstart/image_bed/master/last10.jpg)
+![](https://raw.githubusercontent.com/dirstart/image_bed/master/last11.jpg)
+![](https://raw.githubusercontent.com/dirstart/image_bed/master/last12.jpg)
+![](https://raw.githubusercontent.com/dirstart/image_bed/master/last13.png)
 
 
+#### 寒假会重写。
 
-
-#### 使用阿里云 icon-font
-
-
-#### 进度表
-schedule.md
-#### Get
-learning.md
+##  管理精力而不是管理时间。
 
 #### 视频种类分为
 > 1.warm
@@ -43,11 +23,11 @@ learning.md
 
 
 #### 1.技术选型
-> Vue + Vue-router + Axios + Less + Node.js + MongoDB + Express
-#### 2.绿色风格
-> 虫师的风格
+> 初期决定：Vue + Vue-router + Axios + Less + Node.js + MongoDB + Express
+草草完成后增加的使用库和框架： Muse-UI
+
 #### 2.当前进度概括
-2018-1-1 配环境。
+有兴趣可看 reference.md
 
 
 
