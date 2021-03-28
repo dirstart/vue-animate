@@ -74,6 +74,6 @@ export default {
 }
 .input-style {
   color: green;
-  background-color: #red;
+  background-color: red;
 }
 </style>
